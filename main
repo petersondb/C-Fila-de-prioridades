@@ -1,0 +1,75 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define NIdentificadores 10;
+#define NPrioridades 20;
+
+int identificador, prioridade, escolha, tempIdentificador, tempPrioridade;
+int fila [NIdentificadores] [NPrioridades];
+
+void inicializa (void);
+void Comando1 (void);
+void Comando2 (void);
+void Comando3 (void);
+void Comando4P (void);
+void Comando4Q (void);
+
+void main (void)
+{
+	inicializa();
+	printf("Digite de 1 a 4 para opções...")
+	scanf("%d", &escolha);
+	
+	switch (escolha)
+	case 1:
+	printf("Entre com o ID e dê Enter, depois prioridade e Enter");
+	scanf("%d", &identificador);
+	scanf("%d", &prioridade);
+	Comando1();
+	break;
+	case 2:
+	printf("Digite o identificador para remover o item da lista");
+	Comando2();
+	break;
+	case 3:
+	printf("Entre com a prioridade para remover da lista");
+	Comando3();
+	break;
+	case 4:
+	char escolha4;
+	printf("Escolha P ou Q");
+	scanf("%c", &escolha4)
+	switch(escolha4)
+	case 'P':
+	Comando4P();
+	break;
+	case 'Q':
+	Comando4Q();
+	break;
+	
+}
+	
+void inicializa(void)
+{
+	for (int i = 0; i < NIdentificadores; i++)
+	{
+		fila [i][0] = 0;
+		fila [i][1] = 0;
+	}
+}
+
+void Comando1(void)
+{
+	fila [0][0] = identificador;
+	fila [0][1] = prioridade;
+	for(int i = 1; i < NIdentificadores; i++)
+	{
+	if(prioridade > fila [i][0])
+	{
+		tempIdentificador = fila [0][0];
+		tempPrioridade = fila [0][1];
+	}	
+
+	}
+}
